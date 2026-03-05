@@ -9,6 +9,20 @@ const InfoBox = ({title, braille, text}) => (
     </div>
 )
 
+const TitleBox = ({title, braille}) => (
+    <div>
+        <h4>{braille}</h4>
+        <h2>{title}</h2>
+    </div>
+)
+
+const ProjectBox = ({title, link, desc}) => (
+    <div class='project'>
+        <a href={link}>{title}</a>
+        <p>{desc}</p>
+    </div>
+)
+
 const renderContent = {
     1: (
         <InfoBox
@@ -28,13 +42,17 @@ const renderContent = {
             studying  computer science. I am from Southlake, Texas.'
         />
     ),
-    3: (
-        <InfoBox
+    3: ([
+        <TitleBox
             title='PROJECTS'
             braille='⠠⠏⠠⠗⠠⠕⠠⠚⠠⠑⠠⠉⠠⠞⠠⠎'
-            text='I am a student at Texas A&M University studying  computer science. I am from Southlake, Texas.'
+        />,
+        <ProjectBox 
+            title='lockN▸'
+            link='https://github.com/thompsonbhigh/lockN'
+            desc='lockN is a productivty app about tracking workouts, tasks and goals'
         />
-    ),
+    ]),
     4: (
         <InfoBox 
             text='I was able to build this with the help of some amazing 3D modelers'

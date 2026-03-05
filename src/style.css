@@ -106,10 +106,34 @@ body {
     background-color: #CCFF33;
     position: absolute;
     z-index: 1;
-    left: 0;
+    right: 0;
     bottom: 15%;
     width: 50%;
     font-size: 24px;
     color: black;
     padding: 2%;
+}
+
+.project a {
+    text-decoration: none;
+    font-family: 'Crimson Text', serif;
+    font-size: 64px;
+    font-weight: 400;
+    color: black;
+    writing-mode: horizontal-tb;
+    z-index: 2;
+    right: 0;
+    padding-right: 5%;
+    padding-left: 1%;
+    position: absolute;
+    top: 25%;
+    background-color: #CCFF33;
+}
+
+.project p {
+    bottom: 41%;
+    width: 23.11%;
+    max-height: 30%;
+    background-color: #a8a8a85b;
+    color: white;
 }
