@@ -28,16 +28,17 @@ const App = () => {
             </Router>
             <h3>生き甲斐</h3>
             <div class='info-box'>
-                <div class='info-box-txt'>
-                    {currentStage && <HomeInfo currentStage={currentStage} />}                    
-                </div> 
-
-                <Canvas class='canvas' camera={{near: 0.1, far: 1000, rotation: [0, 0, 0]}}>
+                <Canvas id='canvas' camera={{near: 0.1, far: 1000, rotation: [0, 0, 0]}}>
                     <Suspense fallback={<Loader />}>
                         <ambientLight intensity={0.7}/>
                         <Sphere />    
                     </Suspense>
                 </Canvas>
+            </div>
+            <div class='info-box'>
+                <div class='info-box-txt'>
+                    {currentStage && <HomeInfo currentStage={currentStage} />}                    
+                </div> 
             </div>
         </main>
     )

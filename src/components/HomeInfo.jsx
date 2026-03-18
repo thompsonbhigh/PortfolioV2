@@ -18,8 +18,10 @@ const TitleBox = ({title, braille}) => (
 
 const ProjectBox = ({title, link, desc}) => (
     <div class='project'>
-        <a href={link}>{title}</a>
-        <p>{desc}</p>
+        <div class='project-info'>
+            <a href={link}>{title}</a>
+            <p>{desc}</p>
+        </div>
     </div>
 )
 
@@ -50,8 +52,18 @@ const renderContent = {
         <ProjectBox 
             title='lockN▸'
             link='https://github.com/thompsonbhigh/lockN'
-            desc='lockN is a productivty app about tracking workouts, tasks and goals'
-        />
+            desc='Productivity app using Node, Express, EJS'
+        />,
+        <ProjectBox 
+            title='Panda Express Web App▸'
+            link='https://github.com/thompsonbhigh/Panda-Express-Web-App'
+            desc='Conceptual web app for Panda Express'
+        />,
+        <ProjectBox 
+            title='Point of Sales Software▸'
+            link='https://github.com/thompsonbhigh/Point-of-Sales-Software'
+            desc='Cashier and management software for restaurants'
+        />,
     ]),
     4: (
         <InfoBox 
