@@ -16,7 +16,8 @@ body {
 .home h1 {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-    font-size: 64px;
+    font-size: 4.2vw;
+    /* font-size: 64px; */
     color: white;
     margin: 5%;
     letter-spacing: 7%;
@@ -25,7 +26,7 @@ body {
 .home h2 {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 2.1vw;
     letter-spacing: 54%;
     color: #818181;
     margin: 5%;
@@ -36,21 +37,31 @@ body {
     background-image: url('./assets/images/navbox.png');
     background-size: contain;
     background-repeat: no-repeat;
-    width: 21vw;
-    height: 65vh;
+    /* Match the artwork and fit within both viewport dimensions. */
+    width: min(21vw, calc(65vh * 329 / 618));
+    aspect-ratio: 329 / 618;
+    container-type: inline-size;
     position: absolute;
     bottom: 0;
     left: 5%;
 }
 
+.navbox header {
+    padding: 10% 0% 0 35%;
+}
+
 .navbox a {
+    display: block;
     font-family: 'Anonymous Pro', monospace;
     color: black;
-    font-size: 32px;
+    font-size: 10cqw;
     font-weight: 400;
     text-decoration: none;
-    left: 35%;
-    position: relative;
+}
+
+.navbox a p {
+    margin: 0 0 1em;
+    line-height: 1.2;
 }
 
 .home h3 {
@@ -59,11 +70,12 @@ body {
     bottom: -2%;
     writing-mode: vertical-lr;
     font-family: 'Playfair Display' serif;
-    font-size: 128px;
+    font-size: 15vh;
     color: #A8A8A8;
     font-weight: 400;
     user-select: none;
     cursor: default;
+    z-index: 5;
 }
 
 .info-box {
@@ -82,7 +94,7 @@ body {
     z-index: 1;
     color:#CCFF33;
     font-family: 'Source Serif 4', serif;
-    font-size: 96px;
+    font-size: 6.5vw;
     letter-spacing: 40%;
     margin-left: 2%;
     margin-bottom: 0;
@@ -91,7 +103,7 @@ body {
 .info-box h4 {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-    font-size: 64px;
+    font-size: 3.2vw;
     letter-spacing: 18%;
     color: #818181;
     z-index: 1;
@@ -194,12 +206,12 @@ scrollbar-color: #CCFF33 transparent;
     margin-left: auto;
     justify-self: right;
     justify-content: space-evenly;
-    width: 50%;
+    width: 60%;
     transition: width 250ms ease;
 }
 
 .project:hover {
-    width: 60%;
+    width: 65%;
 }
 
 #canvas {
@@ -229,7 +241,7 @@ scrollbar-color: #CCFF33 transparent;
 
 .project-info p {
     padding-right: 5%;
-    max-width: 95%;
+    max-width: 100%;
     background-color: #a8a8a85b;
     color: white;
     z-index: 1;
@@ -237,5 +249,26 @@ scrollbar-color: #CCFF33 transparent;
     margin-top: 0;
     font-size: 20px;
     line-height: 1.2;
-    min-height: 2.4em;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 5% 0px 2%;
+    background-color: #a8a8a85b;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #CCFF33;
+}
+
+.project-technologies li {
+    padding: 2px 8px;
+    border: 1px solid #ccff3370;
+    border-radius: 4px;
+    overflow-wrap: anywhere;
+    min-width: 0;
 }

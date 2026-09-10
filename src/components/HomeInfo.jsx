@@ -16,10 +16,17 @@ const TitleBox = ({title, braille}) => (
     </div>
 )
 
-const ProjectBox = ({title, link, desc}) => (
-    <div class='project'>
-        <div class='project-info'>
+const ProjectBox = ({title, link, desc, technologies = []}) => (
+    <div className='project'>
+        <div className='project-info'>
             <a href={link} target='_blank' rel='noopener noreferrer'>{title}</a>
+            {technologies.length > 0 && (
+                <ul className='project-technologies' aria-label='Technologies used'>
+                    {technologies.map((technology) => (
+                        <li key={technology}>{technology}</li>
+                    ))}
+                </ul>
+            )}
             <p>{desc}</p>
         </div>
     </div>
@@ -51,20 +58,42 @@ const renderContent = {
                 braille='⠠⠏⠠⠗⠠⠕⠠⠚⠠⠑⠠⠉⠠⠞⠠⠎'
             />
             <div class='project-list'>
+                {/* Fill each technologies array with names, e.g. ['React', 'JavaScript', 'PostgreSQL']. Empty arrays hide the tags. */}
                 <ProjectBox
                     title='lockN▸'
+                    technologies={['JavaScript', 'NodeJS', 'PostgreSQL']}
                     link='https://github.com/thompsonbhigh/lockN'
-                    desc='Productivity app using Node, Express, EJS'
+                    desc='Productivity app with workout, goal, and task tracking with live leaderboards'
                 />
                 <ProjectBox
                     title='Panda Express Web App▸'
+                    technologies={['JavaScript','EJS','AWS']}
                     link='https://github.com/thompsonbhigh/Panda-Express-Web-App'
                     desc='Conceptual web app for Panda Express'
                 />
                 <ProjectBox
                     title='Point of Sales Software▸'
+                    technologies={['Java', 'JDBC', 'AWS']}
                     link='https://github.com/thompsonbhigh/Point-of-Sales-Software'
                     desc='Cashier and management software for restaurants'
+                />
+                <ProjectBox
+                    title='MewTracker▸'
+                    technologies={['JavaScript', 'React', 'MongoDB']}
+                    link='https://github.com/thompsonbhigh/MewTracker'
+                    desc='Completion tracker for the game Mewgenics'
+                />
+                <ProjectBox
+                    title='PouchPrice▸'
+                    technologies={['TypeScript', 'React Native', 'PostgreSQL']}
+                    link='https://github.com/thompsonbhigh/PouchPrice'
+                    desc='Crowd-sourced price tracker'
+                />
+                <ProjectBox
+                    title='Nodeasy▸'
+                    technologies={['JavaScript', 'CLI']}
+                    link='https://github.com/thompsonbhigh/Nodeasy'
+                    desc='CLI tool for quickly building nodeJS project structure'
                 />
             </div>
         </div>

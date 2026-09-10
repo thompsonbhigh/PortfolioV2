@@ -15,6 +15,7 @@ const App = () => {
         <main class='home'>
             <h1>THOMPSON HIGH</h1>
             <h2>⠠⠞⠓⠕⠍⠏⠎⠕⠝ ⠠⠓⠊⠛⠓</h2>
+            <h3>生き甲斐</h3>
             <Router>
                 <div class='navbox'>
                     <Navbar />
@@ -26,7 +27,6 @@ const App = () => {
                     <Route path="/credits" element={<Credits setCurrentStage={setCurrentStage}/>} />
                 </Routes>
             </Router>
-            <h3>生き甲斐</h3>
             <div class='info-box'>
                 <Canvas id='canvas' camera={{near: 0.1, far: 1000, rotation: [0, 0, 0]}}>
                     <Suspense fallback={<Loader />}>
