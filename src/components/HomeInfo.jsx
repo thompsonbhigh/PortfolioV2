@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const InfoBox = ({title, braille, text}) => (
-    <div>
+    <div class='info-content'>
         <h4>{braille}</h4>
         <h2>{title}</h2>
         <p>{text}</p>
@@ -10,7 +10,7 @@ const InfoBox = ({title, braille, text}) => (
 )
 
 const TitleBox = ({title, braille}) => (
-    <div>
+    <div class='project-title'>
         <h4>{braille}</h4>
         <h2>{title}</h2>
     </div>
@@ -19,7 +19,7 @@ const TitleBox = ({title, braille}) => (
 const ProjectBox = ({title, link, desc}) => (
     <div class='project'>
         <div class='project-info'>
-            <a href={link}>{title}</a>
+            <a href={link} target='_blank' rel='noopener noreferrer'>{title}</a>
             <p>{desc}</p>
         </div>
     </div>
@@ -44,27 +44,31 @@ const renderContent = {
             studying  computer science. I am from Southlake, Texas.'
         />
     ),
-    3: ([
-        <TitleBox
-            title='PROJECTS'
-            braille='⠠⠏⠠⠗⠠⠕⠠⠚⠠⠑⠠⠉⠠⠞⠠⠎'
-        />,
-        <ProjectBox 
-            title='lockN▸'
-            link='https://github.com/thompsonbhigh/lockN'
-            desc='Productivity app using Node, Express, EJS'
-        />,
-        <ProjectBox 
-            title='Panda Express Web App▸'
-            link='https://github.com/thompsonbhigh/Panda-Express-Web-App'
-            desc='Conceptual web app for Panda Express'
-        />,
-        <ProjectBox 
-            title='Point of Sales Software▸'
-            link='https://github.com/thompsonbhigh/Point-of-Sales-Software'
-            desc='Cashier and management software for restaurants'
-        />,
-    ]),
+    3: (
+        <div class='projects-content'>
+            <TitleBox
+                title='PROJECTS'
+                braille='⠠⠏⠠⠗⠠⠕⠠⠚⠠⠑⠠⠉⠠⠞⠠⠎'
+            />
+            <div class='project-list'>
+                <ProjectBox
+                    title='lockN▸'
+                    link='https://github.com/thompsonbhigh/lockN'
+                    desc='Productivity app using Node, Express, EJS'
+                />
+                <ProjectBox
+                    title='Panda Express Web App▸'
+                    link='https://github.com/thompsonbhigh/Panda-Express-Web-App'
+                    desc='Conceptual web app for Panda Express'
+                />
+                <ProjectBox
+                    title='Point of Sales Software▸'
+                    link='https://github.com/thompsonbhigh/Point-of-Sales-Software'
+                    desc='Cashier and management software for restaurants'
+                />
+            </div>
+        </div>
+    ),
     4: (
         <InfoBox 
             text='I was able to build this with the help of some amazing 3D modelers'

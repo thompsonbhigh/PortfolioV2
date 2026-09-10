@@ -56,12 +56,14 @@ body {
 .home h3 {
     position: absolute;
     left: 18%;
-    bottom: 2%;
+    bottom: -2%;
     writing-mode: vertical-lr;
     font-family: 'Playfair Display' serif;
     font-size: 128px;
     color: #A8A8A8;
     font-weight: 400;
+    user-select: none;
+    cursor: default;
 }
 
 .info-box {
@@ -109,12 +111,95 @@ body {
     padding: 2%;
 }
 
+.info-content p {
+    margin-left: auto;
+    margin-right: -2%;
+}
+
+.info-box-txt {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+/* Lime scrollbar styling — kept here for easy restoration.
+scrollbar-width: thin;
+scrollbar-color: #CCFF33 transparent;
+
+.info-box-txt::-webkit-scrollbar,
+.project-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.info-box-txt::-webkit-scrollbar-track,
+.project-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.info-box-txt::-webkit-scrollbar-thumb,
+.project-list::-webkit-scrollbar-thumb {
+    background: #CCFF33;
+    border-radius: 999px;
+}
+
+.info-box-txt::-webkit-scrollbar-button,
+.project-list::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
+*/
+
+/* Keep scrolling available while hiding the scrollbar. */
+.info-box-txt,
+.project-list {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.info-box-txt::-webkit-scrollbar,
+.project-list::-webkit-scrollbar {
+    display: none;
+}
+
+.project-title {
+    flex: 0 0 auto;
+}
+
+.projects-content {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    overflow: hidden;
+    margin-right: -2%;
+}
+
+.project-list {
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 2% 0 0 2%;
+}
+
+.project-list .project:last-child .project-info p {
+    margin-bottom: 0;
+}
+
 .project {
     display: flex;
     flex-direction: column;
+    margin-left: auto;
     justify-self: right;
     justify-content: space-evenly;
-    width: 50%;;
+    width: 50%;
+    transition: width 250ms ease;
+}
+
+.project:hover {
+    width: 60%;
 }
 
 #canvas {
@@ -151,4 +236,6 @@ body {
     position: relative;
     margin-top: 0;
     font-size: 20px;
+    line-height: 1.2;
+    min-height: 2.4em;
 }
