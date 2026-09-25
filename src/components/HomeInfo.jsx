@@ -61,13 +61,13 @@ const renderContent = {
                 {/* Fill each technologies array with names, e.g. ['React', 'JavaScript', 'PostgreSQL']. Empty arrays hide the tags. */}
                 <ProjectBox
                     title='lockN▸'
-                    technologies={['JavaScript', 'NodeJS', 'PostgreSQL']}
-                    link='https://github.com/thompsonbhigh/lockN'
+                    technologies={['JavaScript', 'NodeJS', 'PostgreSQL', 'React']}
+                    link='https://github.com/thompsonbhigh/lockNv2'
                     desc='Productivity app with workout, goal, and task tracking with live leaderboards'
                 />
                 <ProjectBox
                     title='Panda Express Web App▸'
-                    technologies={['JavaScript','EJS','AWS']}
+                    technologies={['JavaScript','EJS','AWS', 'NodeJS']}
                     link='https://github.com/thompsonbhigh/Panda-Express-Web-App'
                     desc='Conceptual web app for Panda Express'
                 />
@@ -91,7 +91,7 @@ const renderContent = {
                 />
                 <ProjectBox
                     title='Nodeasy▸'
-                    technologies={['JavaScript', 'CLI']}
+                    technologies={['JavaScript', 'CLI', 'NodeJS']}
                     link='https://github.com/thompsonbhigh/Nodeasy'
                     desc='CLI tool for quickly building nodeJS project structure'
                 />
