@@ -72,6 +72,12 @@ const renderContent = {
                     desc='Conceptual web app for Panda Express'
                 />
                 <ProjectBox
+                    title='Life Terminal▸'
+                    technologies={['Rust','Ratatui','SQLite']}
+                    link='https://github.com/thompsonbhigh/life-terminal'
+                    desc='Terminal app that manages todo, goals, habits and more'
+                />
+                <ProjectBox
                     title='Point of Sales Software▸'
                     technologies={['Java', 'JDBC', 'AWS']}
                     link='https://github.com/thompsonbhigh/Point-of-Sales-Software'
