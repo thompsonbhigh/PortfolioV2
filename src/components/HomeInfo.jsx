@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const InfoBox = ({title, braille, text}) => (
+const InfoBox = ({ title, braille, text }) => (
     <div class='info-content'>
         <h4>{braille}</h4>
         <h2>{title}</h2>
@@ -9,14 +9,14 @@ const InfoBox = ({title, braille, text}) => (
     </div>
 )
 
-const TitleBox = ({title, braille}) => (
+const TitleBox = ({ title, braille }) => (
     <div class='project-title'>
         <h4>{braille}</h4>
         <h2>{title}</h2>
     </div>
 )
 
-const ProjectBox = ({title, link, desc, technologies = []}) => (
+const ProjectBox = ({ title, link, desc, technologies = [] }) => (
     <div className='project'>
         <div className='project-info'>
             <a href={link} target='_blank' rel='noopener noreferrer'>{title}</a>
@@ -37,18 +37,17 @@ const renderContent = {
         <InfoBox
             title='HOME'
             braille='⠠⠓⠠⠕⠠⠍⠠⠑'
-            text='I am a student at Texas A&M University studying  computer science. I am from Southlake, Texas.'
+            text='I am a student at Texas A&M University studying  computer science from Southlake, Texas.'
         />
     ),
     2: (
         <InfoBox
             title='ABOUT'
             braille='⠠⠁⠠⠃⠠⠕⠠⠥⠠⠞'
-            text='I am a junior Computer Science student at Texas A&M University with a strong interest in software development 
+            text='I am a senior Computer Science student at Texas A&M University with a strong interest in software development 
             and problem-solving. I am driven by a desire to understand systems at a fundamental level, from exploring hardware to 
             designing and implementing clean and efficient code. I enjoy collaborating in team-based environments where ideas, 
-            technical skills, and perspectives come together to build effective solutions.I am a student at Texas A&M University 
-            studying  computer science. I am from Southlake, Texas.'
+            technical skills, and perspectives come together to build effective solutions.'
         />
     ),
     3: (
@@ -67,13 +66,13 @@ const renderContent = {
                 />
                 <ProjectBox
                     title='Panda Express Web App▸'
-                    technologies={['JavaScript','EJS','AWS', 'NodeJS']}
+                    technologies={['JavaScript', 'EJS', 'AWS', 'NodeJS']}
                     link='https://github.com/thompsonbhigh/Panda-Express-Web-App'
                     desc='Conceptual web app for Panda Express'
                 />
                 <ProjectBox
                     title='Life Terminal▸'
-                    technologies={['Rust','Ratatui','SQLite']}
+                    technologies={['Rust', 'Ratatui', 'SQLite']}
                     link='https://github.com/thompsonbhigh/life-terminal'
                     desc='Terminal app that manages todo, goals, habits and more'
                 />
@@ -105,7 +104,7 @@ const renderContent = {
         </div>
     ),
     4: (
-        <InfoBox 
+        <InfoBox
             text='I was able to build this with the help of some amazing 3D modelers'
             link='/credits'
             btnText='Check them out →'
@@ -116,7 +115,7 @@ const renderContent = {
 
 
 const HomeInfo = ({ currentStage }) => {
-  return renderContent[currentStage] || null;
+    return renderContent[currentStage] || null;
 }
 
 export default HomeInfo
